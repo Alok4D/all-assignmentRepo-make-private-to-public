@@ -16,7 +16,8 @@ const CardSection = () => {
     console.log(data);
 
   return (
-    <div className="mt-8">
+    <div className="mt-8 ">
+
          <Banner></Banner>
 
       <div className="mt-8 mb-8">

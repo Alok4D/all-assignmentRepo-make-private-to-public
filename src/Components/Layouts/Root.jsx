@@ -5,11 +5,16 @@ import { Outlet } from 'react-router-dom';
 
 const Root = () => {
     return (
-        <div>
-            <Navbar></Navbar>
+        <div >
+           
+          <div className="w-[88%] mx-auto">
+          <Navbar></Navbar>
             <Outlet></Outlet>
-            <Footer></Footer>
+          </div>
+          
+          <Footer></Footer>
         </div>
+       
     );
 };
 

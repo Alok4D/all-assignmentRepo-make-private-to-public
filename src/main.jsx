@@ -11,6 +11,7 @@ import {
 import Root from './Components/Layouts/Root';
 import Error from './Components/Error-Page/Error';
 import CardSection from './Components/Industrial-Card/CardSection';
+import CardDetails from './Components/Card-Details/CardDetails';
 
 
 
@@ -24,6 +25,11 @@ const router = createBrowserRouter([
         path: '/',
         element: <CardSection></CardSection>,
        
+      },
+      {
+        path: '/cardDetails/:id',
+        element: <CardDetails></CardDetails>,
+        loader: () => fetch('/Industrial.json'),
       }
     ]
   },
