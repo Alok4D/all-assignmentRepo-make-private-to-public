@@ -33,9 +33,9 @@ const Navbar = () => {
     </div>
     <div className="lg:navbar-end lg:gap-4 gap-2 ">
       <Link to="/login">
-      <a className="btn btn-primary">Login</a>
+      <a className="btn btn-success">Login</a>
       </Link>
-      <a className="btn btn-primary">Sign Out</a>
+      <a className="btn btn-secondary">Sign Out</a>
      
     </div>
   </div>
