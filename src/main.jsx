@@ -12,6 +12,7 @@ import Root from './Components/Layouts/Root';
 import Error from './Components/Error-Page/Error';
 import CardSection from './Components/Industrial-Card/CardSection';
 import CardDetails from './Components/Card-Details/CardDetails';
+import Login from './Components/Login-Page/Login';
 
 
 
@@ -30,6 +31,11 @@ const router = createBrowserRouter([
         path: '/cardDetails/:id',
         element: <CardDetails></CardDetails>,
         loader: () => fetch('/Industrial.json'),
+      }
+      ,
+      {
+        path: "/login",
+        element: <Login></Login>,
       }
     ]
   },
