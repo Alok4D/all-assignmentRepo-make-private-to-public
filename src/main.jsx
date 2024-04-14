@@ -14,6 +14,7 @@ import CardSection from './Components/Industrial-Card/CardSection';
 import CardDetails from './Components/Card-Details/CardDetails';
 import Login from './Components/Login-Page/Login';
 import Register from './Components/Login-Page/Register-page/Register';
+import AuthProvider from './Components/Auth-Provider/AuthProvider';
 
 
 
@@ -49,6 +50,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
