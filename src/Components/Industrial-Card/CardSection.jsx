@@ -24,7 +24,7 @@ const CardSection = () => {
         <h2 className="text-[#131313] text-[40px] text-center">Industrial Card : {data.length}</h2>
       </div>
 
-      <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 w-[90%] mx-auto">
+      <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 ">
         {
             data.map(cardList => <CardData key={cardList.id} cardList={cardList}></CardData>)
         }
