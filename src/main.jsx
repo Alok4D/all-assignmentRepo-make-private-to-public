@@ -13,6 +13,7 @@ import Error from './Components/Error-Page/Error';
 import CardSection from './Components/Industrial-Card/CardSection';
 import CardDetails from './Components/Card-Details/CardDetails';
 import Login from './Components/Login-Page/Login';
+import Register from './Components/Login-Page/Register-page/Register';
 
 
 
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>
       }
     ]
   },
@@ -44,6 +49,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-   <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
