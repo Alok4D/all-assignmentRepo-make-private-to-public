@@ -1,8 +1,20 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Auth-Provider/AuthProvider";
 
 const Register = () => {
+
+
+    useEffect(() => {
+        const clear = setInterval(() => {
+            console.log("I am called!");
+        }, 1000)
+
+        return () => {
+            clearInterval(clear)
+        }
+    })
+
 
     const {registerUser, setUser} = useContext(AuthContext)
     const [error, setError] = useState("")
@@ -16,6 +28,7 @@ const Register = () => {
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
         const photo = e.target.photo.value;
+
         if(password.length<6){
             setError("Password must be 6 characters")
             return

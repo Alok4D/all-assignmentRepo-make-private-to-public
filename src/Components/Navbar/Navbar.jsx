@@ -12,7 +12,7 @@ const links = <>
 
 const Navbar = () => {
 
-  const {user} = useContext(AuthContext)
+  const {user, logOut} = useContext(AuthContext)
   console.log(user);
 
   return (
@@ -38,13 +38,16 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="lg:navbar-end lg:gap-4 gap-2 ">
-
-      {user && user.email}
       <Link to="/login">
       <a className="btn btn-success">Login</a>
       </Link>
-      <a className="btn btn-secondary">Sign Out</a>
-     
+      
+    {user ? <div>
+      {user.email}
+      <button onClick={ () => logOut()} className="btn btn-secondary">Log Out</button>
+    </div> : ""}
+
+
     </div>
   </div>
   );
