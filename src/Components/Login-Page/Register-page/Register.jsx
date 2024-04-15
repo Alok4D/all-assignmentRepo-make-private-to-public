@@ -2,6 +2,10 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Auth-Provider/AuthProvider";
 
+// toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Register = () => {
 
 
@@ -44,9 +48,12 @@ const Register = () => {
         console.log(name, photo, email, password, confirmPassword);
         registerUser(email, password)
         .then(result=>{
+            toast.success('User Create Successfully!')
+            
             setUser(result.user)
         })
         .catch(error=> setError(error.message))
+        toast.error('Already this email exit!')
     }
 
 
@@ -84,6 +91,7 @@ const Register = () => {
                 }
 
                <button type="submit" className="btn btn-primary w-full mt-5">Register</button>
+               <ToastContainer></ToastContainer>
                     </form>
 
 

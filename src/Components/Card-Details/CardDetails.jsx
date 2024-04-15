@@ -1,7 +1,17 @@
 
-import {useLoaderData, useParams} from "react-router-dom";
+import { useContext, useEffect } from "react";
+import {useLoaderData, useLocation, useNavigate, useParams} from "react-router-dom";
+import { AuthContext } from "../Auth-Provider/AuthProvider";
 
 const CardDetails = () => {
+
+    const locationRoutes = useLocation()
+    console.log(locationRoutes );
+    const navigate = useNavigate()
+     
+     const {user} = useContext(AuthContext)
+
+
     const cardDetail = useLoaderData();
     const {id} = useParams();
     const dataInt = parseInt(id);
@@ -9,6 +19,15 @@ const CardDetails = () => {
     console.log(cardBio);
 
     const {image, segment_name, location, estate_title, price, description, status, area, facilities} = cardBio;
+
+
+
+    useEffect( () => {
+        if(user){
+          navigate(locationRoutes .state)
+        }
+       
+      }, [user])
 
     return (
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 mt-[52px] mb-[52px] w-[90%] mx-auto ">

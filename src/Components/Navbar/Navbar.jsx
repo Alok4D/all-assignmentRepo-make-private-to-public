@@ -5,8 +5,9 @@ import { AuthContext } from "../Auth-Provider/AuthProvider";
 const links = <>
 <li><NavLink to="/">Home</NavLink></li>
 <li><NavLink to="/listedBooks">About Us</NavLink></li>
-<li><NavLink to="/pagesRead">Contact Us</NavLink></li>
-<li><NavLink to="/user">Update Profile</NavLink></li>
+<li><NavLink to="/updateProfile">Update Profile</NavLink></li>
+<li><NavLink to="/userProfile">User Profile</NavLink></li>
+
 </>
 
 
@@ -16,7 +17,7 @@ const Navbar = () => {
   console.log(user);
 
   return (
-    <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 lg:w-[90%] mx-auto">
+    <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 lg:w-[88%] mx-auto">
     <div className="navbar-start max-sm:w-[45%]">
 
       <div className="dropdown">
@@ -29,7 +30,7 @@ const Navbar = () => {
         </ul>
 
       </div>
-      <a className="btn btn-ghost text-[#131313] lg:text-[28px]">Industrial</a>
+      <a className="text-red-500 font-extrabold lg:text-[32px] cursor-pointer">Industrial</a>
     </div>
 
     <div className="navbar-center hidden  lg:flex">
@@ -38,14 +39,14 @@ const Navbar = () => {
       </ul>
     </div>
     <div className="lg:navbar-end lg:gap-4 gap-2 ">
-      <Link to="/login">
-      <a className="btn btn-success">Login</a>
-      </Link>
+     
       
-    {user ? <div>
-      {user.email}
+    {user ? <div className="flex gap-4 justify-center items-center">
+      <img className="border rounded-full h-[45px]" src={user.photoURL} />
       <button onClick={ () => logOut()} className="btn btn-secondary">Log Out</button>
-    </div> : ""}
+    </div> :  <Link to="/login">
+      <a className="btn btn-success">Login</a>
+      </Link>}
 
 
     </div>

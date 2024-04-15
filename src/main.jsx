@@ -16,6 +16,11 @@ import Login from './Components/Login-Page/Login';
 import Register from './Components/Login-Page/Register-page/Register';
 import AuthProvider from './Components/Auth-Provider/AuthProvider';
 
+import ProtectedRoute from './Components/Protected-Routes/ProtectedRoute';
+import UpdateProfile from './Components/Update-Profile/UpdateProfile';
+import UserProfile from './Components/User-Profile/UserProfile';
+
+
 
 
 const router = createBrowserRouter([
@@ -31,7 +36,9 @@ const router = createBrowserRouter([
       },
       {
         path: '/cardDetails/:id',
-        element: <CardDetails></CardDetails>,
+        element: <ProtectedRoute>
+          <CardDetails></CardDetails>
+        </ProtectedRoute>,
         loader: () => fetch('/Industrial.json'),
       }
       ,
@@ -42,6 +49,15 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+  
+      {
+        path: "/updateProfile",
+        element: <UpdateProfile></UpdateProfile>
+      },
+      {
+        path: '/userProfile',
+        element: <UserProfile></UserProfile>
       }
     ]
   },
