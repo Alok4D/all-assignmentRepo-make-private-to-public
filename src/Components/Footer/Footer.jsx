@@ -1,10 +1,30 @@
+import photo from '../../../public/Logo-img/logo.jpg';
+import photofooter from '../../../public/Images/demo3-payment.png';
 
 
 const Footer = () => {
     return (
-        <footer className="footer p-10 bg-base-200 text-base-content">
+     <div>
+         <footer className="p-10  bg-base-200 text-base-content">
+        <div className='footer w-[83%] mx-auto '>
+            
 
-{/* LET'S OPTIMIZE YOUR SUPPLY CHAIN */}
+<nav>
+    <div className="flex justify-center items-center gap-1">
+      <img src={photo} alt="" />
+      <h2 className='text-4xl'>Vactor</h2>
+    </div>
+   <div>
+    <p>82 Valley Farms Court Grovetown</p>
+   </div>
+   <div>
+   (546) 347-9636
+   </div>
+   <div>
+   Mon - Sat : 8 AM - 5 PM
+   </div>
+  </nav> 
+
   <nav>
     <h6 className="footer-title">Services</h6> 
     <a className="link link-hover">Branding</a>
@@ -19,12 +39,7 @@ const Footer = () => {
     <a className="link link-hover">Jobs</a>
     <a className="link link-hover">Press kit</a>
   </nav> 
-  <nav>
-    <h6 className="footer-title">Legal</h6> 
-    <a className="link link-hover">Terms of use</a>
-    <a className="link link-hover">Privacy policy</a>
-    <a className="link link-hover">Cookie policy</a>
-  </nav> 
+ 
   <form>
     <h6 className="footer-title">Newsletter</h6> 
     <fieldset className="form-control w-80">
@@ -37,7 +52,19 @@ const Footer = () => {
       </div>
     </fieldset>
   </form>
-</footer>
+        </div>
+        </footer>
+
+      <div className='m-container h-96 w-full bg-red-400 '>
+      <div className='flex justify-between w-[80%] mx-auto'>
+          <h2>Copyright © 2023 Vactor Store. All Rights Reserved.</h2>
+          <div>
+            <img src={photofooter} alt="footer-photo" />
+          </div>
+        </div>
+      </div>
+
+     </div>
     );
 };
 
