@@ -1,4 +1,3 @@
-
 import { updateProfile } from "firebase/auth";
 import { auth } from "../../FireBase/firebase.init";
 import { useContext } from "react";
@@ -8,10 +7,7 @@ import { AuthContext } from "../Auth-Provider/AuthProvider";
 const UpdateProfile = () => {
 
   const {user} = useContext(AuthContext)
-  console.log(user);
-
-  // const {userUpdateProfile} = useContext(AuthContext)
-  // console.log(userUpdateProfile);
+ 
 
   const updateProfileForm = (e) => {
     e.preventDefault()

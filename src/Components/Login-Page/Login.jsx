@@ -47,7 +47,6 @@ const Login = () => {
       if(user){
         navigate(location.state)
       }
-     
     }, [user])
 
     return (

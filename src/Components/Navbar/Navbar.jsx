@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
+import photo from '../../../public/Logo-img/logo.jpg';
 
 const links = (
   <>
@@ -37,14 +38,17 @@ const Navbar = () => {
 
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] lg:p-2 shadow bg-base-100 rounded-box lg:w-52"
-          >
+            className="menu menu-sm dropdown-content mt-3 z-[1] lg:p-2 shadow bg-base-100 rounded-box lg:w-52">
             {links}
           </ul>
         </div>
-        <a className="text-red-500 font-extrabold lg:text-[32px] cursor-pointer">
-          Industrial
-        </a>
+
+     <div className="flex gap-4 justify-center items-center cursor-pointer">
+     <img src={photo} alt="industrial-logo-image" />
+        <h2 className="text-[40px] font-extrabold">Vactor</h2>
+     </div>
+
+        {/* <a className="text-red-500 font-extrabold lg:text-[32px] cursor-pointer">Industrial</a> */}
       </div>
 
       <div className="navbar-center hidden  lg:flex">
