@@ -21,7 +21,7 @@ const CardSection = () => {
          <Banner></Banner>
 
       <div className="mt-8 mb-8">
-        <h2 className="text-[#131313] text-[50px] text-center">Our Services</h2>
+        <h2 className="text-[#131313] text-[50px] text-center">Estate Section</h2>
       </div>
 
       <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-5 ">

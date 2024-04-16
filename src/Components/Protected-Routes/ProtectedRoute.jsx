@@ -12,8 +12,8 @@ const ProtectedRoute = ({children}) => {
     if(user) {
         return children
     }
-    return <Navigate to="/login" state={locationRoutes .pathname}></Navigate>
-    // return <Navigate to="/cardDetails/:id" state={locationRoutes .pathname}></Navigate>
+    return <Navigate to="/login" state={locationRoutes?.pathname}></Navigate>
+   
 };
 
 export default ProtectedRoute;

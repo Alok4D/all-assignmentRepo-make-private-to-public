@@ -1,10 +1,11 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Auth-Provider/AuthProvider";
-
 // toast
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
+
 
 const Register = () => {
 
@@ -49,21 +50,30 @@ const Register = () => {
         registerUser(email, password)
         .then(result=>{
             toast.success('User Create Successfully!')
+
+           // update profile
+           updateProfile(result.user, {
+            displayName: name,
+            photoURL: photo,
+        })
             
             setUser(result.user)
         })
-        .catch(error=> setError(error.message))
-        toast.error('Already this email exit!')
+        .catch(error=> {
+            console.error(error)
+            toast.error('Already this email exit!')
+        })
+       
     }
 
 
     return (
-        <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 bg-white flex items-center relative overflow-hidden shadow-xl mb-8">
+        <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 border rounded-xl bg-white flex items-center relative overflow-hidden shadow-xl mb-8">
                 {/* register form  */}
                 <div className={`p-8 w-full duration-500` }>
-                    <h1 className="backdrop-blur-sm text-2xl lg:text-4xl pb-4">Register</h1>
+                    <h1 className="font-extrabold lg:text-4xl pb-4 flex justify-center items-center">Register Now!</h1>
 
-                    <form onSubmit={handleRegister} className="space-y-2">
+                <form onSubmit={handleRegister} className="space-y-3">
 
                <div>
                <p>Name</p>
@@ -90,15 +100,15 @@ const Register = () => {
                     error && <small className="text-red-600">{error}</small>
                 }
 
-               <button type="submit" className="btn btn-primary w-full mt-5">Register</button>
+               <button type="submit" className="btn btn-primary w-full">Register</button>
                <ToastContainer></ToastContainer>
-                    </form>
+                </form>
 
 
 
-                    <p className="mb-3 text-center">Already have an account?<Link to="/login" className="underline font-semibold">Login</Link></p>
-                    <hr />
-                     <button type="button" className="py-2 px-5 mb-4 mt-8 mx-auto block shadow-lg border rounded-md border-black"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" className="w-5 h-5 fill-current inline-block mr-2"><path d="M16.318 13.714v5.484h9.078c-0.37 2.354-2.745 6.901-9.078 6.901-5.458 0-9.917-4.521-9.917-10.099s4.458-10.099 9.917-10.099c3.109 0 5.193 1.318 6.38 2.464l4.339-4.182c-2.786-2.599-6.396-4.182-10.719-4.182-8.844 0-16 7.151-16 16s7.156 16 16 16c9.234 0 15.365-6.49 15.365-15.635 0-1.052-0.115-1.854-0.255-2.651z"></path></svg>Continue with Google</button>
+                    <p className="mb-2 mt-3 text-center">Already have an account?<Link to="/login" className="underline font-semibold">Login</Link></p>
+
+                    
                  </div>
         </div>
     );

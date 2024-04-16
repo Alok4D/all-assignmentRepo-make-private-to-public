@@ -18,7 +18,7 @@ import AuthProvider from './Components/Auth-Provider/AuthProvider';
 
 import ProtectedRoute from './Components/Protected-Routes/ProtectedRoute';
 import UpdateProfile from './Components/Update-Profile/UpdateProfile';
-import UserProfile from './Components/User-Profile/UserProfile';
+
 
 
 
@@ -54,11 +54,8 @@ const router = createBrowserRouter([
       {
         path: "/updateProfile",
         element: <UpdateProfile></UpdateProfile>
-      },
-      {
-        path: '/userProfile',
-        element: <UserProfile></UserProfile>
       }
+     
     ]
   },
   
