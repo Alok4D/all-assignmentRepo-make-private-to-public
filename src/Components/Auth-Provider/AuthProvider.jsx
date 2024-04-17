@@ -17,16 +17,6 @@ const AuthProvider = ({ children }) => {
         
     }
 
-    // // Update Profile...
-    // const userUpdateProfile = (user, name, image) => {
-    //     return updateProfile(user, {
-    //         displayName: name, 
-    //         photoURL: image
-    //       })
-
-    // }
-
-
     const loginUser = (email, password) =>{
        return signInWithEmailAndPassword(auth, email, password)
         

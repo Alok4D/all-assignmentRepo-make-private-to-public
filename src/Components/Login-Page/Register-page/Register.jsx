@@ -6,6 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+
 
 const Register = () => {
 
@@ -22,7 +24,9 @@ const Register = () => {
 
 
     const {registerUser, setUser} = useContext(AuthContext)
-    const [error, setError] = useState("")
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
   
 
 
@@ -34,14 +38,22 @@ const Register = () => {
         const confirmPassword = e.target.confirmPassword.value;
         const photo = e.target.photo.value;
 
-        if(password.length<6){
-            setError("Password must be 6 characters")
-            return
+        if(password.length < 6){
+            setError("Password should be at least must be 6 characters")
+            return;
         }
-        else if(password !== confirmPassword){
-            setError("Password didn't match")
-            return
+        else if(!/[A-Z]/.test(password)){
+            setError('password must contain at least 1 upper case character!')
+            return;
         }
+
+        // else if(password !== confirmPassword){
+        //     setError("Password didn't match")
+        //     return
+        // }
+
+
+        // reset error
         setError('');
 
 
@@ -50,18 +62,16 @@ const Register = () => {
         registerUser(email, password)
         .then(result=>{
             toast.success('User Create Successfully!')
-
            // update profile
            updateProfile(result.user, {
             displayName: name,
             photoURL: photo,
         })
-            
             setUser(result.user)
         })
-        .catch(error=> {
+        .catch(error => {
             console.error(error)
-            toast.error('Already this email exit!')
+            toast.error('Already This Email Exit!');
         })
        
     }
@@ -85,15 +95,23 @@ const Register = () => {
                </div>
                <div>
                <p>Email</p>
-                <input name='email' type="text" placeholder="Type here" className="input input-bordered w-full " />
+                <input name='email' type="text" placeholder="Type here" className="input input-bordered w-full " required/>
                </div>
                <div>
                <p>Password</p>
-                <input name='password' type="text" placeholder="Type here" className="input input-bordered w-full " />
+              <div className="relative">
+              <input name='password' type={ showPassword ? "text" : "password"} placeholder="Password" className="input input-bordered w-full " required/>
+                <span className="absolute top-4 right-3" onClick={ () => setShowPassword(!showPassword)}>
+                    {
+                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                    }
+                </span>
+              </div>
+                
                </div>
                <div>
                <p>Confirm Password</p>
-                <input name='confirmPassword' type="text" placeholder="Type here" className="input input-bordered w-full " />
+                <input name='confirmPassword' type="text" placeholder="Type here" className="input input-bordered w-full " required />
                </div>
 
                 {
