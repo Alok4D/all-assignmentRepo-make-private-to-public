@@ -27,7 +27,7 @@ const UpdateProfile = () => {
 
 
     return (
-  <div className="w-[88%] mx-auto bg-slate-50 mt-8 mb-8">
+  <div className="w-[80%] mx-auto bg-slate-50 mt-8 mb-8">
     <h2 className="flex justify-center items-center text-5xl font-extrabold ">Update Profile  Information</h2>
 
     <div className="card mx-auto shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8">
