@@ -12,7 +12,7 @@ const Banner = () => {
   }, []);
 
     return (
-   <div className="w-[80%] mx-auto" >
+   <div className="w-[80%] mx-auto"  data-aos="zoom-in">
        <div className="carousel w-full border rounded-3xl">
         
         <div id="slide1" className="carousel-item relative w-full">

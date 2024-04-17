@@ -7,9 +7,16 @@ import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
 
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Register = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 2000,
+        });
+      }, []);
 
 
     useEffect(() => {
@@ -82,7 +89,7 @@ const Register = () => {
 
 
     return (
-        <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 border rounded-xl bg-white flex items-center relative overflow-hidden shadow-xl mb-8">
+        <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 border rounded-xl bg-white flex items-center relative overflow-hidden shadow-xl mb-8"  data-aos="zoom-in">
                 {/* register form  */}
                 <div className={`p-8 w-full duration-500` }>
                     <h1 className="font-extrabold lg:text-4xl pb-4 flex justify-center items-center">Register Now!</h1>

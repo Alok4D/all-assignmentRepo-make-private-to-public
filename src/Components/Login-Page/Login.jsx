@@ -1,9 +1,17 @@
 import { useContext, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Login = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000,
+    });
+  }, []);
 
   const location = useLocation()
   console.log(location);
@@ -50,7 +58,7 @@ const Login = () => {
     }, [user])
 
     return (
-       <div className="hero w-[88%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8">
+       <div className="hero w-[88%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8" data-aos="zoom-in">
   <div className="hero-content flex-col lg:flex-row-reverse">
 
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
