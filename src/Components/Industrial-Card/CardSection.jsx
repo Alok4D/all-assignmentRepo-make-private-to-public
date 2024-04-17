@@ -5,6 +5,7 @@ import CardData from "./CardData";
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import TeamSection from "../Our-team/TeamSection";
 
 
 
@@ -42,7 +43,9 @@ const CardSection = () => {
         }
       </div>
 
-
+        <div>
+          <TeamSection></TeamSection>
+        </div>
 
     </div>
   );

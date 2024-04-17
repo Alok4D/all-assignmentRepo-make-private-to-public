@@ -1,17 +1,19 @@
-
+import photoabout from '../../../public/Images/about-header-1536x726.png';
 
 const AboutUs = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" className="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 className="text-5xl font-bold">Box Office News!</h1>
-      <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-      <button className="btn btn-primary">Get Started</button>
-    </div>
-  </div>
-</div>
+      <div className='w-[80%] mx-auto mt-8 mb-8'>
+        <div >
+          <h2 className='text-[45px] text-center'>About Industrial Manager</h2>
+        </div>
+        <div>
+          <p className='mt-3 text-center '>Industrial Manager is an award-winning software company who is transforming how businesses get work done. Our cloud-based project portfolio management platform enables world-class collaboration for thousands of customers globally, with tools for project planning, workflow management, resource management and time tracking across the entire work lifecycle.</p>
+          <div className="img-factory-manager mt-2 mb-2">
+            <img src={photoabout} alt="" />
+            <p>Industrial Manager provides in-depth features for leaders to make data-driven decisions and for businesses to manage projects of all levels of complexity on one, accessible SaaS platform. Organizations such as NASA, Marriott and AT&T rely on our software to manage their teams, their projects, and do amazing things together. ProjectManager is headquartered in Austin, with offices in Auckland, Seattle and other great cities across the globe.</p>
+          </div>
+        </div>
+      </div>
     );
 };
 

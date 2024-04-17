@@ -19,6 +19,7 @@ import AuthProvider from './Components/Auth-Provider/AuthProvider';
 import ProtectedRoute from './Components/Protected-Routes/ProtectedRoute';
 import UpdateProfile from './Components/Update-Profile/UpdateProfile';
 import AboutUs from './Components/About-Us/AboutUs';
+import TeamSection from './Components/Our-team/TeamSection';
 
 
 
@@ -39,6 +40,7 @@ const router = createBrowserRouter([
         element: <CardSection></CardSection>,
        
       },
+     
       {
         path: '/cardDetails/:id',
         element: <ProtectedRoute>
@@ -59,7 +61,8 @@ const router = createBrowserRouter([
       {
         path: "/updateProfile",
         element: <UpdateProfile></UpdateProfile>
-      }
+      },
+     
      
     ]
   },
