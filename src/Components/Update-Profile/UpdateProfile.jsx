@@ -3,6 +3,10 @@ import { auth } from "../../FireBase/firebase.init";
 import { useContext } from "react";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 
 const UpdateProfile = () => {
 
@@ -24,10 +28,17 @@ const UpdateProfile = () => {
    
 }
 
+useEffect(() => {
+  AOS.init({
+    duration: 2000, 
+  });
+}, []);
 
 
     return (
-  <div className="w-[80%] mx-auto bg-slate-50 mt-8 mb-8">
+  <div className="w-[80%] mx-auto bg-slate-50 mt-8 mb-8" data-aos="flip-left"
+  data-aos-easing="ease-out-cubic"
+  data-aos-duration="2000">
     <h2 className="flex justify-center items-center text-5xl font-extrabold ">Update Profile  Information</h2>
 
     <div className="card mx-auto shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8">
