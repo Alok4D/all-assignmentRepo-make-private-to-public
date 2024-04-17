@@ -25,7 +25,7 @@ const Register = () => {
 
     const {registerUser, setUser} = useContext(AuthContext)
     const [error, setError] = useState('');
-    const [success, setSuccess] = useState('');
+    // const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
   
 
@@ -46,11 +46,15 @@ const Register = () => {
             setError('password must contain at least 1 upper case character!')
             return;
         }
+        else if(!/[a-z]/.test(password)){
+            setError('password must contain at least 1 lower character!')
+            return;
+        }
 
-        // else if(password !== confirmPassword){
-        //     setError("Password didn't match")
-        //     return
-        // }
+        else if(password !== confirmPassword){
+            setError("Password didn't match")
+            return
+        }
 
 
         // reset error
@@ -71,7 +75,7 @@ const Register = () => {
         })
         .catch(error => {
             console.error(error)
-            toast.error('Already This Email Exit!');
+            toast.error('Already account created!');
         })
        
     }

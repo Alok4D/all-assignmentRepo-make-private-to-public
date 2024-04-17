@@ -50,7 +50,7 @@ const Login = () => {
     }, [user])
 
     return (
-       <div className="hero min-h-screen bg-base-200 mb-8 mt-8">
+       <div className="hero w-[88%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8">
   <div className="hero-content flex-col lg:flex-row-reverse">
 
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

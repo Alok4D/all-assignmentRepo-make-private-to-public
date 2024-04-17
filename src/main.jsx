@@ -18,6 +18,7 @@ import AuthProvider from './Components/Auth-Provider/AuthProvider';
 
 import ProtectedRoute from './Components/Protected-Routes/ProtectedRoute';
 import UpdateProfile from './Components/Update-Profile/UpdateProfile';
+import AboutUs from './Components/About-Us/AboutUs';
 
 
 
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     element: <Root></Root>,
     errorElement: <Error></Error>,
     children: [
+      {
+        path: '/aboutUs',
+        element: <AboutUs></AboutUs>,
+      },
       {
         path: '/',
         element: <CardSection></CardSection>,

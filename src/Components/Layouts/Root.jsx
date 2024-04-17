@@ -5,9 +5,9 @@ import { Outlet } from 'react-router-dom';
 
 const Root = () => {
     return (
-        <div >
+        <div className="" >
            
-          <div className="w-[88%] mx-auto">
+          <div>
           <Navbar></Navbar>
             <Outlet></Outlet>
           </div>

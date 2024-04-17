@@ -2,10 +2,10 @@ import { Link } from "react-router-dom";
 
 const CardData = ({ cardList }) => {
 
-  const {image, segment_name, location, estate_title, price, id} = cardList;
+  const {image,  estate_title, price, id} = cardList;
 
   return (
-    <div className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px dark:bg-[#18181B]">
+    <div className=" max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px dark:bg-[#18181B]">
      <img src={image} alt="Industrial-Products-Images" className="border rounded-xl" />
       <div className="grid gap-2">
         <h1 className="text-lg font-semibold ">{estate_title}</h1>
@@ -24,4 +24,3 @@ const CardData = ({ cardList }) => {
 };
 
 export default CardData;
-// className="mx-auto max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]"

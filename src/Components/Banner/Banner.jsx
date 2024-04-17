@@ -1,8 +1,20 @@
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 const Banner = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Set animation duration
+    });
+  }, []);
+
     return (
-   <div className="w-[88%] mx-auto ">
+   <div className="w-[80%] mx-auto " data-aos="flip-left"
+   data-aos-easing="ease-out-cubic"
+   data-aos-duration="2000">
        <div className="carousel w-full border rounded-3xl">
         
         <div id="slide1" className="carousel-item relative w-full">

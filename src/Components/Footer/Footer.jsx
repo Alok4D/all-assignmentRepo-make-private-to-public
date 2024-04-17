@@ -1,12 +1,15 @@
 import photo from '../../../public/Logo-img/logo.jpg';
 import photofooter from '../../../public/Images/demo3-payment.png';
 
+import { IoMdCall} from "react-icons/io";
+
 
 const Footer = () => {
     return (
      <div>
-         <footer className="pt-14 bg-base-200 text-base-content">
-        <div className='footer h-[280px] w-[83%] mx-auto '>
+         <footer className="pt-14 w-full  bg-base-200 text-base-content">
+
+        <div className='footer h-[280px] w-[80%]  mx-auto' >
             
 
 <nav>
@@ -14,7 +17,8 @@ const Footer = () => {
       <img src={photo} alt="" />
       <h2 className='text-4xl'>Vactor</h2>
     </div>
-   <div>
+   <div className='flex justify-center items-center gap-2'>
+    <IoMdCall></IoMdCall>
     <p>82 Valley Farms Court Grovetown</p>
    </div>
    <div>
@@ -53,10 +57,11 @@ const Footer = () => {
     </fieldset>
   </form>
         </div>
+
         </footer>
 
       <div className='m-container h-20 w-full  rounded-[8px]'>
-      <div className='flex justify-between w-[79%] mx-auto pt-7'>
+      <div className='flex justify-between w-[80%] mx-auto pt-7'>
           <h2>Copyright © 2023 Vactor Store. All Rights Reserved.</h2>
           <div>
             <img src={photofooter} alt="footer-photo" />

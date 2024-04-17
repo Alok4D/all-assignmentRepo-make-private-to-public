@@ -6,18 +6,19 @@ import photo from '../../../public/Logo-img/logo.jpg';
 const links = (
   <>
     <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/listedBooks">About Us</NavLink></li>
+    <li><NavLink to="/aboutUs">About Us</NavLink></li>
     <li><NavLink to="/updateProfile">Update Profile</NavLink></li>
   </>
 );
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  
   console.log(user);
 
   return (
-    <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 lg:w-[88%] mx-auto">
-      <div className="navbar-start max-sm:w-[45%]">
+    <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 lg:w-[80%] mx-auto">
+      <div className="navbar-start max-sm:w-[74%]">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
@@ -58,7 +59,11 @@ const Navbar = () => {
         
         {user ? (
           <div className="flex gap-4 justify-center items-center">
+           
+
+            <div className="tooltip" data-tip={user.displayName}>
             <img className="border rounded-full h-[45px]" src={user.photoURL} />
+</div>
             <button onClick={() => logOut()} className="btn btn-secondary">Log Out</button></div>) : 
             (<Link to="/login"><a className="btn btn-success">Login</a></Link>)}
       </div>
