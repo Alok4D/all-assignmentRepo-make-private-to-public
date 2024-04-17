@@ -12,9 +12,7 @@ const Banner = () => {
   }, []);
 
     return (
-   <div className="w-[80%] mx-auto " data-aos="flip-left"
-   data-aos-easing="ease-out-cubic"
-   data-aos-duration="2000">
+   <div className="w-[80%] mx-auto" >
        <div className="carousel w-full border rounded-3xl">
         
         <div id="slide1" className="carousel-item relative w-full">

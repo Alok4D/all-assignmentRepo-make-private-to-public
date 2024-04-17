@@ -13,7 +13,6 @@ const links = (
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  
   console.log(user);
 
   return (
@@ -61,9 +60,9 @@ const Navbar = () => {
           <div className="flex gap-4 justify-center items-center">
            
 
-            <div className="tooltip" data-tip={user.displayName}>
+          <div className="tooltip" data-tip={user.displayName}>
             <img className="border rounded-full h-[45px]" src={user.photoURL} />
-</div>
+          </div>
             <button onClick={() => logOut()} className="btn btn-secondary">Log Out</button></div>) : 
             (<Link to="/login"><a className="btn btn-success">Login</a></Link>)}
       </div>

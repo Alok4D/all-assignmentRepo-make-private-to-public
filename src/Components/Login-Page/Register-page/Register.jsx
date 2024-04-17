@@ -63,7 +63,7 @@ const Register = () => {
 
 
         console.log(name, photo, email, password, confirmPassword);
-        registerUser(email, password)
+        registerUser(email, password, name)
         .then(result=>{
             toast.success('User Create Successfully!')
            // update profile
