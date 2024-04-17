@@ -9,12 +9,12 @@ const TeamSection = () => {
 
     useEffect(() => {
         AOS.init({
-          duration: 2000, // Set animation duration
+          duration: 2000,
         });
       }, []);
 
     return (
-        <section className="py-6 w-[80%] mx-auto mt-7 dark:bg-gray-100 dark:text-gray-800" >
+        <section className="py-6 w-[80%] mx-auto mt-7 dark:bg-gray-100 dark:text-gray-800" data-aos="zoom-in">
 
         <div className="container flex flex-col items-center justify-center p-4 mx-auto space-y-8 sm:p-10">
             <h1 className="text-4xl font-bold leading-none text-center sm:text-5xl">Meet our Leadership Team</h1>
