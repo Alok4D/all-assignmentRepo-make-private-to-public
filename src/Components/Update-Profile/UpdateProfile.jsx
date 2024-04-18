@@ -64,7 +64,7 @@ useEffect(() => {
 
 
       <div className="form-control mt-6">
-        <button type="submit" className="btn btn-primary">Update Now</button>
+        <button type="submit" className="btn bg-[#F60]">Update Now</button>
       </div>
     </form>
   </div>

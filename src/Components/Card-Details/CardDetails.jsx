@@ -68,6 +68,7 @@ const CardDetails = () => {
         <div className="mt-5">
         <button className="btn bg-[#F60]">Buy Now</button>
         </div>
+       
 
     </div>
     </div>
