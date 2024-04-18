@@ -2,14 +2,14 @@ import { Link } from "react-router-dom";
 
 const CardData = ({ cardList }) => {
 
-  const {image,  estate_title, price, id} = cardList;
+  const {image,  estate_title, price, id, description} = cardList;
 
   return (
-    <div className=" max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px dark:bg-[#18181B]">
-     <img src={image} alt="Industrial-Products-Images" className="border rounded-xl" />
+    <div className="max-w-[350px] space-y-4 rounded-lg bg-white p-6 shadow-lg md:w-[350px] dark:bg-[#18181B]">
+     <img src={image} alt="Industrial-Products-Images" className="border rounded-xl h-[190px] " />
       <div className="grid gap-2">
         <h1 className="text-lg font-semibold ">{estate_title}</h1>
-        <p className="text-sm text-gray-500 dark:text-white/60">This is a brief description of the product. It highlights the key features and benefits.</p>
+        <p className="text-sm text-gray-500 dark:text-white/60 flex-grow">{description.slice(0, 50)}...</p>
         <div className="text-lg font-semibold">{price}</div>
       </div>
       <div className="flex gap-4">

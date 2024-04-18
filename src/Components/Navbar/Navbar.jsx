@@ -3,20 +3,27 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
 import photo from '../../../public/Logo-img/logo.jpg';
 
-const links = (
-  <>
-    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/">Home</NavLink></li>
-    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/aboutUs">About Us</NavLink></li>
-    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/updateProfile">Update Profile</NavLink></li>
-    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/contact">Contact</NavLink></li>
-
-  </>
-);
 
 const Navbar = () => {
 
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
+
+  
+const links = (
+  <>
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/">Home</NavLink></li>
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/aboutUs">About Us</NavLink></li>
+    
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/contact">Contact</NavLink></li>
+    {
+      user &&
+      <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/updateProfile">Update Profile</NavLink></li>
+    }
+
+  </>
+);
+
 
   return (
     <div className="navbar bg-base-100 w-[100%] m-auto lg:mt-[68px] mt-6 lg:w-[80%] mx-auto">
@@ -66,8 +73,8 @@ const Navbar = () => {
           <div className="tooltip" data-tip={user.displayName}>
             <img className="border rounded-full h-[45px]" src={user.photoURL} />
           </div>
-            <button onClick={() => logOut()} className="btn bg-[#F60]">Log Out</button></div>) : 
-            (<Link to="/login"><a className="btn bg-[#F60]">Login</a></Link>)}
+            <button onClick={() => logOut()} className="btn bg-[#F60] text-[16px]">Log Out</button></div>) : 
+            (<Link to="/login"><a className="btn bg-[#F60] text-[16px]">Login</a></Link>)}
       </div>
     </div>
   );

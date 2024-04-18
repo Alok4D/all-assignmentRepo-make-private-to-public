@@ -15,7 +15,7 @@ export const Banner = () => {
   }, [nextSlider]);
 
   return (
-    <div className="h-60 w-[80%] mx-auto border rounded-xl md:h-[470px] lg:h-[540px] relative overflow-hidden">
+    <div className="h-60 w-[80%] mx-auto border rounded-xl md:h-[470px] lg:h-[700px] relative overflow-hidden">
         {/* arrow left */}
         <button onClick={prevSlider} className="absolute top-1/2 left-3 z-50 flex justify-center items-center bg-white rounded-full w-6 h-6 md:w-8 md:h-8">
           <svg className="w-4 h-4 md:w-6 md:h-6 icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="#0095FF" d="M685.248 104.704a64 64 0 010 90.496L368.448 512l316.8 316.8a64 64 0 01-90.496 90.496L232.704 557.248a64 64 0 010-90.496l362.048-362.048a64 64 0 0190.496 0z"></path></g></svg>
@@ -34,7 +34,7 @@ export const Banner = () => {
         <div className="ease-linear duration-500 flex transform-gpu" style={{ transform: `translateX(-${currentSlider * 100}%)`}}>
           {/* sliders */}
           {carouselImages.map((slide, inx) => (
-            <img key={slide} src={slide} className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[540px] object-cover" alt={`Slider - ${inx + 1}`}/>
+            <img key={slide} src={slide} className="min-w-full h-60 bg-black/20 sm:h-96 md:h-[700px] object-cover" alt={`Slider - ${inx + 1}`}/>
           ))}
         </div>
     </div>
