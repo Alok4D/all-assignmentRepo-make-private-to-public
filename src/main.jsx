@@ -21,6 +21,7 @@ import UpdateProfile from './Components/Update-Profile/UpdateProfile';
 import AboutUs from './Components/About-Us/AboutUs';
 
 import { HelmetProvider } from 'react-helmet-async';
+import Contact from './Components/Contact-Section/Contact';
 
 
 
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
         path: "/updateProfile",
         element: <UpdateProfile></UpdateProfile>
       },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
+      }
      
      
     ]
