@@ -34,8 +34,8 @@ const Register = () => {
 
     const {registerUser, setUser} = useContext(AuthContext)
     const [error, setError] = useState('');
-    // const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [showPasswordConfirm, setShowPasswordConfirm] = useState(false);
   
 
 
@@ -126,10 +126,10 @@ const Register = () => {
                <div>
                <p>Confirm Password</p>
                <div className="relative">
-              <input name='confirmPassword' type={ showPassword ? "text" : "password"} placeholder="Confirm your password" className="input input-bordered w-full " required/>
-                <span className="absolute top-4 right-3" onClick={ () => setShowPassword(!showPassword)}>
+              <input name='confirmPassword' type={ showPasswordConfirm ? "text" : "password"} placeholder="Confirm your password" className="input input-bordered w-full " required/>
+                <span className="absolute top-4 right-3" onClick={ () => setShowPasswordConfirm(!showPassword)}>
                     {
-                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                        showPasswordConfirm ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
                     }
                 </span>
               </div>
