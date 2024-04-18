@@ -5,10 +5,10 @@ import photo from '../../../public/Logo-img/logo.jpg';
 
 const links = (
   <>
-    <li><NavLink to="/">Home</NavLink></li>
-    <li><NavLink to="/aboutUs">About Us</NavLink></li>
-    <li><NavLink to="/updateProfile">Update Profile</NavLink></li>
-    <li><NavLink to="/contact">Contact</NavLink></li>
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/">Home</NavLink></li>
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/aboutUs">About Us</NavLink></li>
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/updateProfile">Update Profile</NavLink></li>
+    <li className="text-[#F60] rounded-xl text-[16px]"><NavLink to="/contact">Contact</NavLink></li>
 
   </>
 );
@@ -48,7 +48,7 @@ const Navbar = () => {
 
      <div className="flex gap-4 justify-center items-center cursor-pointer">
      <img src={photo} alt="industrial-logo-image" />
-        <h2 className="text-[40px] font-extrabold">Vactor</h2>
+        <h2 className="lg:text-[40px] font-extrabold">Vactor</h2>
      </div>
 
      
@@ -66,8 +66,8 @@ const Navbar = () => {
           <div className="tooltip" data-tip={user.displayName}>
             <img className="border rounded-full h-[45px]" src={user.photoURL} />
           </div>
-            <button onClick={() => logOut()} className="btn btn-secondary">Log Out</button></div>) : 
-            (<Link to="/login"><a className="btn btn-success">Login</a></Link>)}
+            <button onClick={() => logOut()} className="btn bg-[#F60]">Log Out</button></div>) : 
+            (<Link to="/login"><a className="btn bg-[#F60]">Login</a></Link>)}
       </div>
     </div>
   );

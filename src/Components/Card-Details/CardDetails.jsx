@@ -1,4 +1,3 @@
-
 import { useContext, useEffect } from "react";
 import {useLoaderData, useLocation, useNavigate, useParams} from "react-router-dom";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
@@ -66,6 +65,9 @@ const CardDetails = () => {
         <p>#{facilities[2]}</p>
     </div>
 
+        <div className="mt-5">
+        <button className="btn bg-[#F60]">Buy Now</button>
+        </div>
 
     </div>
     </div>

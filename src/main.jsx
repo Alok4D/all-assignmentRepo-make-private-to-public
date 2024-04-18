@@ -15,11 +15,9 @@ import CardDetails from './Components/Card-Details/CardDetails';
 import Login from './Components/Login-Page/Login';
 import Register from './Components/Login-Page/Register-page/Register';
 import AuthProvider from './Components/Auth-Provider/AuthProvider';
-
 import ProtectedRoute from './Components/Protected-Routes/ProtectedRoute';
 import UpdateProfile from './Components/Update-Profile/UpdateProfile';
 import AboutUs from './Components/About-Us/AboutUs';
-
 import { HelmetProvider } from 'react-helmet-async';
 import Contact from './Components/Contact-Section/Contact';
 
@@ -40,17 +38,14 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <CardSection></CardSection>,
-       
       },
-     
       {
         path: '/cardDetails/:id',
         element: <ProtectedRoute>
           <CardDetails></CardDetails>
         </ProtectedRoute>,
         loader: () => fetch('/Industrial.json'),
-      }
-      ,
+      },
       {
         path: "/login",
         element: <Login></Login>,
@@ -62,7 +57,9 @@ const router = createBrowserRouter([
   
       {
         path: "/updateProfile",
-        element: <UpdateProfile></UpdateProfile>
+        element: <ProtectedRoute>
+          <UpdateProfile></UpdateProfile>
+        </ProtectedRoute>,
       },
       {
         path: '/contact',

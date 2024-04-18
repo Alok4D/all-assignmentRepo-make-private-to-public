@@ -101,11 +101,11 @@ const Register = () => {
 
                <div>
                <p>Name</p>
-                <input name='name' type="text" placeholder="Type here" className="input input-bordered w-full " />
+                <input name='name' type="text" placeholder="Type here" className="input input-bordered w-full " required/>
                </div>
                <div>
                <p>Photo</p>
-                <input name='photo' type="text" placeholder="Type here" className="input input-bordered w-full " />
+                <input name='photo' type="text" placeholder="Type here" className="input input-bordered w-full " required/>
                </div>
                <div>
                <p>Email</p>
@@ -125,14 +125,21 @@ const Register = () => {
                </div>
                <div>
                <p>Confirm Password</p>
-                <input name='confirmPassword' type="text" placeholder="Type here" className="input input-bordered w-full " required />
+               <div className="relative">
+              <input name='confirmPassword' type={ showPassword ? "text" : "password"} placeholder="Confirm your password" className="input input-bordered w-full " required/>
+                <span className="absolute top-4 right-3" onClick={ () => setShowPassword(!showPassword)}>
+                    {
+                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                    }
+                </span>
+              </div>
                </div>
 
                 {
                     error && <small className="text-red-600">{error}</small>
                 }
 
-               <button type="submit" className="btn btn-primary w-full">Register</button>
+               <button type="submit" className="btn bg-[#F60] w-full">Register</button>
                <ToastContainer></ToastContainer>
                 </form>
 
