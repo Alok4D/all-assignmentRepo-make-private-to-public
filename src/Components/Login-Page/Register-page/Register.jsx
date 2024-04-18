@@ -5,13 +5,15 @@ import { AuthContext } from "../../Auth-Provider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
-
+// Animation
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 
 
 const Register = () => {
+
     useEffect(() => {
         AOS.init({
           duration: 2000,
@@ -71,7 +73,7 @@ const Register = () => {
 
         console.log(name, photo, email, password, confirmPassword);
         registerUser(email, password, name)
-        .then(result=>{
+        .then(result => {
             toast.success('User Create Successfully!')
            // update profile
            updateProfile(result.user, {
@@ -90,6 +92,7 @@ const Register = () => {
 
     return (
         <div  className="w-80 md:w-96 lg:w-[500px] mx-auto mt-8 border rounded-xl bg-white flex items-center relative overflow-hidden shadow-xl mb-8"  data-aos="zoom-in">
+            <Helmet><title>Create a an account</title></Helmet>
                 {/* register form  */}
                 <div className={`p-8 w-full duration-500` }>
                     <h1 className="font-extrabold lg:text-4xl pb-4 flex justify-center items-center">Register Now!</h1>

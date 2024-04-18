@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -59,6 +60,7 @@ const Login = () => {
 
     return (
        <div className="hero w-[88%] mx-auto rounded-xl min-h-screen bg-base-200 mb-8 mt-8" data-aos="zoom-in">
+        <Helmet><title>Login Page</title></Helmet>
   <div className="hero-content flex-col lg:flex-row-reverse">
 
     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

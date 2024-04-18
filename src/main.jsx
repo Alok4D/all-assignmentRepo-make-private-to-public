@@ -19,7 +19,8 @@ import AuthProvider from './Components/Auth-Provider/AuthProvider';
 import ProtectedRoute from './Components/Protected-Routes/ProtectedRoute';
 import UpdateProfile from './Components/Update-Profile/UpdateProfile';
 import AboutUs from './Components/About-Us/AboutUs';
-import TeamSection from './Components/Our-team/TeamSection';
+
+import { HelmetProvider } from 'react-helmet-async';
 
 
 
@@ -72,7 +73,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

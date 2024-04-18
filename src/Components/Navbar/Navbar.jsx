@@ -12,6 +12,7 @@ const links = (
 );
 
 const Navbar = () => {
+
   const { user, logOut } = useContext(AuthContext);
   console.log(user);
 
@@ -48,7 +49,7 @@ const Navbar = () => {
         <h2 className="text-[40px] font-extrabold">Vactor</h2>
      </div>
 
-        {/* <a className="text-red-500 font-extrabold lg:text-[32px] cursor-pointer">Industrial</a> */}
+     
       </div>
 
       <div className="navbar-center hidden  lg:flex">

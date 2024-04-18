@@ -2,6 +2,7 @@
 import { useContext, useEffect } from "react";
 import {useLoaderData, useLocation, useNavigate, useParams} from "react-router-dom";
 import { AuthContext } from "../Auth-Provider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const CardDetails = () => {
 
@@ -31,6 +32,9 @@ const CardDetails = () => {
 
     return (
         <div className="grid lg:grid-cols-2 grid-cols-1 gap-12 mt-[52px] mb-[52px] w-[80%] mx-auto ">
+            <Helmet>
+                <title>View Details {id}</title>
+            </Helmet>
 
         <div className="flex justify-center items-center bg-slate-200 border rounded-xl">
             <img src={image} alt="Card Images" className="lg:p-8 p-2 lg:w-[1000px] w-[300px]"/>

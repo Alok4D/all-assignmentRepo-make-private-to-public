@@ -3,6 +3,7 @@ import photoabout from '../../../public/Images/about-header-1536x726.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const AboutUs = () => {
 
@@ -14,6 +15,9 @@ const AboutUs = () => {
 
     return (
       <div className='w-[80%] mx-auto mt-8 mb-8'  data-aos="zoom-out-up">
+        <Helmet>
+          <title>About Us</title>
+        </Helmet>
         <div >
           <h2 className='text-[45px] text-center'>About Industrial Manager</h2>
         </div>

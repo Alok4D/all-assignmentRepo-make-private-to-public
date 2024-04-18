@@ -6,6 +6,7 @@ import { AuthContext } from "../Auth-Provider/AuthProvider";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { Helmet } from "react-helmet-async";
 
 
 const UpdateProfile = () => {
@@ -39,6 +40,9 @@ useEffect(() => {
   <div className="w-[80%] mx-auto bg-slate-50 mt-8 mb-8" data-aos="flip-left"
   data-aos-easing="ease-out-cubic"
   data-aos-duration="2000">
+    <Helmet>
+      <title>Update Your Profile</title>
+    </Helmet>
     <h2 className="flex justify-center items-center text-5xl font-extrabold ">Update Profile  Information</h2>
 
     <div className="card mx-auto shrink-0 w-full max-w-sm shadow-2xl bg-base-100 mt-8">
